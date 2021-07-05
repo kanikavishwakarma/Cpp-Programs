@@ -1,0 +1,105 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class rectangle
+{
+	private:
+		      float length,width;
+		     
+	public:
+	        void setlength(float l)
+			{
+			length=l;
+					   } 
+					   	
+			void setwidth(float w)
+			{
+				width=w;
+					   } 
+					  
+			void show()
+			{
+				cout<<"\nlength="<<length;
+				cout<<"\nwidth="<<width;
+						   }		   	
+					   	  
+			float perimeter()
+			{
+				float peri;
+				peri=2*(length+width);
+				cout<<peri;
+				return peri;
+								   	  }	  
+			
+			float area()
+			{
+				float area;
+				area=length*width;
+				cout<<area;
+				return area;
+									}						
+
+			int samearea(rectangle r)
+			{
+				float areas,areaf;
+			    areaf=length*width;
+			    areas=r.length+r.width;
+			    if(areaf==areas)
+				return 1;
+				else 
+				return 0;						
+													}
+};
+
+int main()
+{
+	rectangle first;
+	first.setlength(5);
+	first.setwidth(2.5);
+	cout<<"\n\nfirst rectangle!!!";
+	first.show();
+	cout<<"\nperimeter of first rectangle=";
+	first.perimeter();
+	cout<<"\narea of first rectangle=";
+	first.area();
+	
+	rectangle second;
+	second.setlength(5);
+	second.setwidth(18.9);
+	cout<<"\n\nsecond rectangle!!!";
+	second.show();
+	cout<<"\nperimeter of second rectangle=";
+	second.perimeter();
+	cout<<"\narea of second rectangle=";
+	second.area();
+	
+	if(first.samearea(second))
+	cout<<"\n\nrectangles have same area";
+	else
+	cout<<"\n\nrectangles not have same area";
+	return 0;
+	
+	first.setlength(5);
+	first.setwidth(6.3);
+	cout<<"first rectangle!!!";
+	first.show();
+	cout<<"\nperimeter of first rectangle=";
+	first.perimeter();
+	cout<<"\narea of first rectangle=";
+	first.area();
+	
+	cout<<"\n\nsecond rectangle!!!";
+	second.show();
+	cout<<"\nperimeter of second rectangle=";
+	second.perimeter();
+	cout<<"\narea of second rectangle=";
+	second.area();
+	
+	if(first.samearea(second))
+	cout<<"\n\nrectangles have same area";
+	else
+	cout<<"\n\nrectangles not have same area";
+	return 0;
+	
+}
