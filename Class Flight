@@ -1,0 +1,51 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class flightdetail
+{
+	private:
+		     int flight_no;
+		     char destination[30];
+		     float distance,fuel;
+		     
+	public:
+	        void feedinfo()
+			{
+				cout<<"enter flight number of flight=";
+				cin>>flight_no;
+				cout<<"enter destination of flight=";
+				fflush(stdin);
+				cin.getline(destination,30);
+				cout<<"enter distance travelled by flight=";
+				cin>>distance;
+					 }	   
+					 
+			void calfuel()
+			{
+			   if(distance<=1000)
+			   cout<<"\nfuel used by flight= 500";
+			   if(distance>1000&&distance<=2000)
+			   cout<<"\nfuel used by flight= 1100";
+			   if(distance>2000)
+			   cout<<"\nfuel used by flight= 2200";
+			   	
+					   }
+					   
+			void showinfo()	
+			{
+			cout<<"\nflight number of flight="<<flight_no;
+			cout<<"\ndestination of flight="<<destination;
+			cout<<"\ndistance travelled by fligh="<<distance;
+		    }
+		   		   
+};
+
+int main()
+{
+	flightdetail f;
+	f.feedinfo();
+	f.showinfo();
+	f.calfuel();
+	return 0;
+}
