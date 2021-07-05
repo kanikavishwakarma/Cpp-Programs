@@ -1,0 +1,34 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class findvolume
+{
+	private:
+		     int r,h,l,w;
+	
+	public:
+	         void volume(int r)
+			 {
+			 	cout<<"\nvolume of sphere="<<1.33*3.14*r*r*r;
+					  }	     
+			
+			void volume(int l,int w,int h)
+			{
+				cout<<"\nvolume of cuboid="<<l*w*h;
+					  }		  
+					  
+			void volume(int r,int h)
+			{
+				cout<<"\nvolume of cylinder="<<3.14*r*r*h;
+					  }		  
+};
+
+int main()
+{
+	findvolume f;
+	f.volume(2);
+	f.volume(1,2,3);
+	f.volume(2,3);
+	return 0;
+}
