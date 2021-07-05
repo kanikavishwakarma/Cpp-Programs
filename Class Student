@@ -1,0 +1,68 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class student
+{
+	private:
+		     int admno,i;
+		     char sname[30];
+		     float english,maths,science,total;
+		    
+	public:
+		     void takedata()
+		    {
+		     	cout<<"\nenter admisssion no of student"<<"=";
+		     	cin>>admno;
+		     	cout<<"\nenter name of student"<<"=";
+		     	cin>>sname;
+		     	cout<<"\nenter marks of maths of student"<<"=";
+		     	cin>>maths;
+		     	cout<<"\nenter marks of science of student"<<"=";
+		     	cin>>science;
+				cout<<"\nenter marks of english of student"<<"=";
+		     	cin>>english;
+		        
+			 }
+			 
+			 float ctotal()
+			{
+				total=maths+science+english;
+			     return total;
+				
+			 } 
+			 
+			 void showdata()
+			 {
+			 	cout<<"\nadmisssion no of student"<<"="<<admno;
+			 	cout<<"\nname of student"<<"="<<sname;
+			 	cout<<"\nmarks of maths of student"<<"="<<maths;
+			 	cout<<"\nmarks of science of student"<<"="<<science;
+			 	cout<<"\nmarks of english of student"<<"="<<english;
+			 	total=ctotal();
+			 	cout<<"\ntotal marks="<<total;
+			    
+			 }
+			 		
+};
+
+int main()
+{
+   student s[100];
+   int i,n;
+   cout<<"\nenter number of student=";
+   cin>>n;
+   for(i=0;i<n;i++)
+   {
+   cout<<"\nenter information of student"<<i+1<<"=";
+   s[i].takedata();
+   }
+    for(i=0;i<n;i++)
+    {
+    cout<<"\ninformation of students"<<i+1<<"=";
+    s[i].showdata();
+    }
+   return 0;
+}
+
+
