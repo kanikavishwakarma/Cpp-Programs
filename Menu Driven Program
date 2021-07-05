@@ -1,0 +1,170 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class matrix
+{
+  private:
+  	       int a[3][3],b[3][3],c[3][3],i=0,j=0,sum=0;
+  
+  public:
+          void input_matrix();
+		  void display_matrix();
+		  void sum_matrix();
+		  void multiply_matrix();
+		  void transpose_matrix();
+};
+
+void matrix::input_matrix()
+{
+	cout<<"\nenter a 3*3 first matrix:\n";
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			cin>>a[i][j];
+		}
+	}
+	
+	cout<<"\nenter a 3*3 second matrix:\n";
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			cin>>b[i][j];
+		}
+	}
+}
+
+void matrix::display_matrix()
+{
+	cout<<"\nfirst matrix:\n";
+	for(i=0;i<3;i++)
+    {
+		for(j=0;j<3;j++)
+		{
+			cout<<a[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+	
+	cout<<"\nsecond matrix:\n";
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			cout<<b[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+}
+
+void matrix::sum_matrix()
+{
+	cout<<"\nsum of the two matrix:\n";
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			c[i][j]=a[i][j]+b[i][j];
+		}
+	}
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			cout<<c[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+}
+
+void matrix::multiply_matrix()
+{
+	int k;
+	cout<<"\nmultiply of the two matrix:\n";
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			c[i][j]=0;
+			for(k=0;k<3;k++)
+			{
+				c[i][j]=c[i][j]+a[i][k]*b[k][j];
+			}
+		}
+	}
+	
+		for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			cout<<c[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+}
+
+void matrix::transpose_matrix()
+{
+    cout<<"\ntranspose of a matrix:\n";
+		for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			c[i][j]=a[j][i];
+		}
+	}
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			cout<<c[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}	
+}
+
+int main()
+{
+	matrix m;
+	int ch;
+	do
+	{
+	cout<<"\nenter 1 to input a matrix";
+	cout<<"\nenter 2 to display a matrix";
+	cout<<"\nenter 3 to add two matrix";
+	cout<<"\nenter 4 to multiply two matrix";
+	cout<<"\nenter 5 to transpose a matrix";
+	cout<<"\nenter 6 to exit";
+	cout<<"\nenter any choice=";
+	cin>>ch;
+	
+	switch(ch)
+	{
+		case 1:
+			   m.input_matrix();
+			   break;
+		case 2:
+			   m.display_matrix();
+			   break;
+		case 3:
+			   m.sum_matrix();
+			   break;
+		case 4:
+			   m.multiply_matrix();
+			   break;
+	    case 5:
+			   m.transpose_matrix();
+			   break;	   
+		case 6:
+		        exit(0);
+		case 7:
+		        cout<<"\nenter correct choice!!!!";			   	   	   
+	}
+  }while(1);
+  return 0;	
+}
+
